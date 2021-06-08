@@ -18,7 +18,6 @@ function ENT:Initialize()
 
     if phys:IsValid() then
         phys:Wake()
-        phys:SetMass(50)
     end
 end
 
