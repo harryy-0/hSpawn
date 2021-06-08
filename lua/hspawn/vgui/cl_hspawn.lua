@@ -129,7 +129,7 @@ net.Receive("RemovePanel", function(len, ply)
 	
 end)
 
-
+--- Could remove these con commands just added them to easily edit vgui
 concommand.Add("removespawnpanel", function(ply)
 if not ply:IsSuperAdmin() then return end
 if not IsValid(hspawnmain) then return end
