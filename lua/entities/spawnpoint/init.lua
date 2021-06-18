@@ -22,13 +22,3 @@ function ENT:Initialize()
     end
 end
 
-
-
-function ENT:Think()
-
-end
-
-
-function ENT:Use(ply)
-
-end
