@@ -1,3 +1,5 @@
+hspawn = hspawn or {}
+
 print("Loading hSpawn")
 
 local path = "hspawn/"

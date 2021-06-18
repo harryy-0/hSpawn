@@ -18,6 +18,17 @@ function ENT:Initialize()
 
     if phys:IsValid() then
         phys:Wake()
+        phys:SetMass(50)
     end
 end
 
+
+
+function ENT:Think()
+
+end
+
+
+function ENT:Use(ply)
+
+end

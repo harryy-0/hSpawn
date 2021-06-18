@@ -1,4 +1,4 @@
-
+hspawn = hspawn or {}
 function OPENUI()
 
 	if IsValid(hspawnmain) then
@@ -11,7 +11,7 @@ function OPENUI()
 -- ADD OPTIONS HERE
 
 
-	hspawn.AddOption({
+	HaddOption({
 		name = "Fountain",
 
 		desc = "The big water thing.",
@@ -19,7 +19,7 @@ function OPENUI()
 		vector = Vector(-1889.687500, -1370.375000, -195.968750)
 	})
 
-	hspawn.AddOption({
+	HaddOption({
 		name = "Industrial",
 
 		desc = "The warehouses.",
@@ -27,7 +27,7 @@ function OPENUI()
 		vector = Vector(-3670.906250, 1292.718750, -203.968750)
 	})
 
-	hspawn.AddOption({
+	HaddOption({
 		name = "Main Spawn",
 
 		desc = "Main spawn area, go check out the NPCs",
@@ -35,7 +35,7 @@ function OPENUI()
 		vector = Vector(1016.843750, -517.031250, -195.968750)
 	})
 
-	hspawn.AddOption({
+	HaddOption({
 		name = "Petrol Station",
 
 		desc = "The petrol station.",
@@ -43,7 +43,7 @@ function OPENUI()
 		vector = Vector(-1244.406250, -7088.625000, -203.968750)
 	})
 
-	hspawn.AddOption({
+	HaddOption({
 		name = "Basketball Court",
 
 		desc = "The place with the orange ball.",
@@ -55,7 +55,7 @@ function OPENUI()
 -- END OF OPTIONS HERE
 end
 
-function hspawn.AddOption(data)
+function HaddOption(data)
 
 	option = optionpnl:Add("DButton")
 
@@ -129,7 +129,7 @@ net.Receive("RemovePanel", function(len, ply)
 	
 end)
 
---- Could remove these con commands just added them to easily edit vgui
+
 concommand.Add("removespawnpanel", function(ply)
 if not ply:IsSuperAdmin() then return end
 if not IsValid(hspawnmain) then return end
@@ -141,6 +141,9 @@ if not ply:IsSuperAdmin() then return end
 if IsValid(hspawnmain) then return end
 	OPENUI()
 end)
+
+
+hook.Add("InitPostEntity", "SpawnOpenUICL", OPENUI)
 
 surface.CreateFont( "hspawntitle", {
 	font = "Bebas Neue", 
@@ -154,3 +157,5 @@ surface.CreateFont( "hspawntext", {
 	size = 20,
 	weight = 10,
 } )
+
+

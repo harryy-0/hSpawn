@@ -18,13 +18,15 @@ end)
 
 
 hook.Add("PlayerSpawn", "SpawnOpenUI", function(ply)
-	local time = string.FormattedTime(timer.TimeLeft( "SitCooldown" ), "%02i:%02i")
+	local time = string.FormattedTime(timer.TimeLeft( "SpawnCooldown" ), "%02i:%02i")
 
 	net.Start("SpawnOpenUI")
 	net.WriteString(time)
 	net.Send(ply)
 
 end)
+
+
 
 hook.Add("PlayerSelectSpawn", "RandomSpawn", function(pl)
 	if not hspawn.EnableInitialSpawnPoints then return end
@@ -55,7 +57,7 @@ shouldOccurSH = true
 
 
 net.Receive("TPVect", function(len, ply)
-	timeleft = string.FormattedTime(timer.TimeLeft( "SitCooldown" ), "%02i:%02i")
+	timeleft = string.FormattedTime(timer.TimeLeft( "SpawnCooldown" ), "%02i:%02i")
 
 	if not shouldOccurSH then
 		print("rejected")
@@ -64,7 +66,7 @@ net.Receive("TPVect", function(len, ply)
 		net.Send(ply)
 	return end
 		shouldOccurSH = false
-		timer.Create( "SitCooldown", hspawn.SpawnDelay, 1 , function() shouldOccurSH = true end )
+		timer.Create( "SpawnCooldown", hspawn.SpawnDelay, 1 , function() shouldOccurSH = true end )
 
 	local phys = ply:GetPhysicsObject()
 	local vec = net.ReadVector()
