@@ -15,7 +15,7 @@ function PANEL:OptionPnl()
 	optionpnl = self:Add("DPanel")
 
 	optionpnl:Dock(FILL)
-	-- optionpnl:DockMargin(170, 150, 170, 150)
+--	optionpnl:DockMargin(170, 150, 170, 150)
 
 
 end

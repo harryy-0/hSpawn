@@ -3,9 +3,9 @@ hspawn = {
 
 	EnableInitialSpawnPoints = true,
 
-	SpawnDelay = 30,
+	SpawnDelay = 1,
 
-	Title = "Spawn Menu" -- Title Text on the spawn mwnu
+	Title = "hSpawn - Spawn Menu"
 
 	InitialSpawnPoints = {  -- Spawn points when the players first join the server.
 
@@ -25,5 +25,3 @@ hspawn = {
 
 
 }
-
-
