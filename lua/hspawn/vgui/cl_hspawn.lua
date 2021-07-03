@@ -1,5 +1,12 @@
+hspawn = hspawn or {}
 
 function hAddSpawn(data)
+    
+	data.boxcolor = data.boxcolor or Color(77, 77, 77, 255)
+	data.namecolor = data.namecolor or Color(255,255,255)
+	data.desccolor = data.desccolor or Color(255,255,255)
+	data.timecolor = data.timecolor or Color(255,255,255)
+    
 
 	option = optionpnl:Add("DButton")
 
@@ -11,7 +18,7 @@ function hAddSpawn(data)
 	function option:Paint(w, h)
 	timeleft = string.FormattedTime(timer.TimeLeft( "SitCooldown" ), "%02i:%02i")
 
-		draw.RoundedBox(0, 0, 0, w, h, data.boxcolor)
+		draw.RoundedBox(0, 0, 0, w, h, data.boxcolor, 100)
 		draw.SimpleText(data.name, "hspawntitle", w*.5, h*.5, data.namecolor, TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER)
 		draw.SimpleText(data.desc, "hspawntext", w*.5, h*.55, data.desccolor, TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER)
 
@@ -23,7 +30,6 @@ function hAddSpawn(data)
 			if timeleft == nil then return end
 			draw.SimpleText(timeleft, "hspawntitle", w*.5, h - 50, data.timecolor, TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER)
 		end
-
 end
 
 shouldOccur = true
@@ -74,13 +80,13 @@ net.Receive("RemovePanel", function(len, ply)
 end)
 
 
-concommand.Add("hspawn_removepanel", function(ply)
+concommand.Add("removespawnpanel", function(ply)
 if not ply:IsSuperAdmin() then return end
 if not IsValid(hspawnmain) then return end
 	hspawnmain:Remove()
 end)
 
-concommand.Add("hspawn_addpanel", function(ply)
+concommand.Add("addspawnpanel", function(ply)
 if not ply:IsSuperAdmin() then return end
 if IsValid(hspawnmain) then return end
 	OPENUI()
