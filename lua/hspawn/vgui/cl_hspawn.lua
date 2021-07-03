@@ -4,7 +4,7 @@ function hAddSpawn(data)
     
 	data.boxcolor = data.boxcolor or Color(77, 77, 77, 255)
 	data.namecolor = data.namecolor or Color(255,255,255)
-	data.desccolor = data.desccolor or Color(255,255,255)
+	data.desccolor = data.desccolor or Color(255,255,255, 150)
 	data.timecolor = data.timecolor or Color(255,255,255)
     
 
@@ -95,15 +95,6 @@ end)
 
 hook.Add("InitPostEntity", "SpawnOpenUICL", OPENUI)
 
-surface.CreateFont( "hspawntitle", {
-	font = "Bebas Neue", 
-	extended = false,
-	size = 50,
-	weight = 100,
-} )
 
-surface.CreateFont( "hspawntext", {
-	font = "Abel", 
-	size = 20,
-	weight = 10,
-} )
+XeninUI:CreateFont("hspawntitle", 45, 100)
+XeninUI:CreateFont("hspawntext", 18, 75)
