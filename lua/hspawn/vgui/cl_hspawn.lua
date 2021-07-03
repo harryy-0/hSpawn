@@ -123,19 +123,19 @@ function HaddOption(data)
 	function option:Paint(w, h)
 	timeleft = string.FormattedTime(timer.TimeLeft( "SitCooldown" ), "%02i:%02i")
 
-	if self:IsHovered() then 
-		draw.RoundedBox(0, 0, 0, w, h, ColorAlpha(data.boxcolor, 240))
-		draw.SimpleText(data.name, "hspawntitle", w*.5, h*.5, data.namecolor, TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER)
-		draw.SimpleText(data.desc, "hspawntext", w*.5, h*.55, data.desccolor, TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER)
-
-		if timeleft == nil then return end
-		draw.SimpleText(timeleft, "hspawntitle", w*.5, h - 50, data.timecolor, TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER)
-
-	else
 		draw.RoundedBox(0, 0, 0, w, h, data.boxcolor)
 		draw.SimpleText(data.name, "hspawntitle", w*.5, h*.5, data.namecolor, TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER)
 		draw.SimpleText(data.desc, "hspawntext", w*.5, h*.55, data.desccolor, TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER)
-	end
+
+		if self:IsHovered() then 
+			draw.RoundedBox(0, 0, 0, w, h, XeninUI.Theme.Navbar)
+			draw.SimpleText(data.name, "hspawntitle", w*.5, h*.5, data.namecolor, TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER)
+			draw.SimpleText(data.desc, "hspawntext", w*.5, h*.55, data.desccolor, TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER)
+	
+			if timeleft == nil then return end
+			draw.SimpleText(timeleft, "hspawntitle", w*.5, h - 50, data.timecolor, TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER)
+		end
+
 end
 
 shouldOccur = true
