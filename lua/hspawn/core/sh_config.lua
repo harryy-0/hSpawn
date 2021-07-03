@@ -3,7 +3,7 @@ hspawn = {
 
 	EnableInitialSpawnPoints = true,
 
-	SpawnDelay = 1,
+	SpawnDelay = 3,
 
 	Title = "hSpawn - Spawn Menu"
 
