@@ -45,8 +45,6 @@ shouldOccur = true
 	end	
 end
 
-
-
 net.Receive("SpawnOpenUI", function()
 	
 	OPENUI()
@@ -57,7 +55,8 @@ net.Receive("GetPos", function()
 	
 	pos = tostring(net.ReadVector())
 
-	chat.AddText(color_green, "Dev Tool | ", color_white, "Your pos is: "..pos)
+	chat.AddText(color_green, "hSpawn | ", color_white, "Your pos is: "..pos)
+	chat.AddText(color_red, "hSpawn | ", color_white, "Remember to add commas when adding to config")
 
 end)
 
