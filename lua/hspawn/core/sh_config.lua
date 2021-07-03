@@ -5,6 +5,8 @@ hspawn = {
 
 	SpawnDelay = 30,
 
+	Title = "Spawn Menu" -- Title Text on the spawn mwnu
+
 	InitialSpawnPoints = {  -- Spawn points when the players first join the server.
 
 		Vector(-888.625000, -287.562500, 12224.031250),
