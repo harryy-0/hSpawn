@@ -130,13 +130,13 @@ net.Receive("RemovePanel", function(len, ply)
 end)
 
 
-concommand.Add("removespawnpanel", function(ply)
+concommand.Add("hspawn_removepanel", function(ply)
 if not ply:IsSuperAdmin() then return end
 if not IsValid(hspawnmain) then return end
 	hspawnmain:Remove()
 end)
 
-concommand.Add("addspawnpanel", function(ply)
+concommand.Add("hspawn_addpanel", function(ply)
 if not ply:IsSuperAdmin() then return end
 if IsValid(hspawnmain) then return end
 	OPENUI()
